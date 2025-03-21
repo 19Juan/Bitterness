@@ -31,12 +31,12 @@ st.set_page_config(
 )
 
 
-st.title("Predicción amargo cocimientos estándar")
+st.title("Predicción amargo cocimientos Estándar 18")
 
-val1 = st.slider("Número de latas de Extracto CO2", min_value = 3, max_value = 4, step = 1)
-val2 = st.slider("Kilogramos de lúpulo Herkules", min_value = 35, max_value = 50, step = 1)
+val1 = st.slider("Número de latas de Extracto CO2", min_value = 0, max_value = 5, step = 1)
+val2 = st.slider("Kilogramos de lúpulo Herkules", min_value = 40, max_value = 50, step = 1)
 val3 = st.slider("% de alpha acidos lúpulo Herkules", min_value = 13.4, max_value = 15.5, step = 0.1)
-val4 = st.slider("mg de catalizador", min_value = 1800.0, max_value = 2600.0, step = 10.0)
+val4 = st.slider("mg de catalizador", min_value = 1500.0, max_value = 2600.0, step = 100.0)
 #val2 = st.selectbox(
 #    "Nivel de Conocimiento del Empleado",
 #    (dic_el.keys()),
@@ -77,3 +77,4 @@ if st.button("Predecir"):
     X_pred = np.array([val1, val2, val3, val4]).reshape(1, -1)
     prediction = model.predict(X_pred)[0]
     st.write(f"Amargo por cocimiento predicho: {prediction:.2f} IBUs")
+
