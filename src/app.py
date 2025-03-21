@@ -5,8 +5,12 @@ import json
 import pickle
 import numpy as np
 
-with open('../models/Random_Forest_Bitterness.sav', 'rb') as file:
+#with open('../models/Random_Forest_Bitterness.sav', 'rb') as file:
+#    model = pickle.load(file)
+    
+with open('../models/Lineal_Regressor_Bitterness.sav', 'rb') as file:
     model = pickle.load(file)
+
 
 #with open('../data/processed/dic_cl.json','r', encoding='utf-8') as archivo:
 #    dic_cl = json.load(archivo)
@@ -18,6 +22,14 @@ with open('../models/Random_Forest_Bitterness.sav', 'rb') as file:
 #    dic_er = json.load(archivo)
 #with open('../data/processed/dic_cs.json','r', encoding='utf-8') as archivo:
 #    dic_cs = json.load(archivo)
+# Configuración de la página y tema personalizados
+
+st.set_page_config(
+    page_title="Predicción de Amargo",
+    page_icon="🍺",
+    layout="wide"
+)
+
 
 st.title("Predicción amargo cocimientos estándar")
 
